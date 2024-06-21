@@ -1,0 +1,179 @@
+:root {
+    --darkCharcoal: #191919;
+    --lightCharcoal: #202020;
+    --headings: #dad7d7;
+    --bodyText: #bcbcbcbc;
+    --accent: #FF6F00;
+    --border-radius: 0.25em;
+}
+
+html {
+    font-size: 100%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--darkCharcoal);
+    font-family: "Montserrat", Verdana, sans-serif;
+    color: var(--bodyText);
+}
+
+#ed-card {
+    display: grid;
+    column-gap: 1em;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+        "icon info"
+        "icon info";
+}
+
+h1 {
+    font-family: "Montserrat";
+    font-weight: 500;
+    color: var(--headings);
+    font-size: 2rem;
+}
+
+h2 {
+    font-family: "Montserrat";
+    font-weight: 500;
+    color: var(--headings);
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+p {
+    margin-top: 1em;
+}
+
+img {
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    margin-bottom: 1em;
+    max-width: 100%;
+}
+
+i {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+}
+
+a {
+    color: var(--bodyText);
+    text-decoration: none;
+}
+
+a:hover i {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--bodyText);
+    text-decoration: none;
+}
+
+.sectionbg {
+    background-color: var(--lightCharcoal);
+    border-radius: var(--border-radius);
+    padding: 1em;
+}
+
+.profile {
+    text-align: center;
+    grid-area: profile;
+    grid-row: 1 / span 2;
+}
+
+.about {
+    grid-area: about;
+    grid-row: 1 / span 1;
+}
+
+.skills {
+    grid-area: skills;
+    grid-row: 3 / span 1;
+}
+
+.projects {
+    grid-area: projects;
+    grid-row: 2 / span 4;
+}
+
+.activity {
+    grid-area: activity;
+    grid-row: 4 / span 1;
+}
+
+.experience {
+    grid-area: experience;
+    grid-row: 6 / span 2;
+}
+
+.contact {
+    grid-area: contact;
+    grid-row: 5 / span 1;
+}
+
+.education {
+    grid-area: education;
+    grid-row: 9 / span 1;
+}
+
+.games {
+    grid-area: games;
+    grid-row: 6 / span 1;
+}
+
+
+/*25em is approx 400px (size of image)*/
+@media only screen and (min-width: 25em) {
+    #wrapper {
+        width: 95%;
+        margin: 1% auto;
+        padding-left: 5%;
+        padding-right: 5%;
+        display: grid;
+        row-gap: 1em;
+        column-gap: 1.5em;
+        grid-template-columns: auto;
+        grid-template-rows: repeat(9, auto);
+        grid-template-areas:
+            "profile"
+            "about"
+            "skills"
+            "projects"
+            "experience"
+            "activity"
+            "education"
+            "contact"
+            "games";
+    }
+}
+
+/* 62em is approx 992px (same breakpoint as Bootstrap for Navbar) */
+@media only screen and (min-width: 62em) {
+    #wrapper {
+        width: 95%;
+        margin: 1% auto;
+        padding-left: 5%;
+        padding-right: 5%;
+        display: grid;
+        row-gap: 1em;
+        column-gap: 1.5em;
+        grid-template-columns: 30% auto;
+        grid-template-rows: repeat(9, 9);
+        grid-template-areas:
+            "profile about"
+            "skills projects"
+            "activity experience"
+            "contact education"
+            "games placeholder";
+    }
+}
