@@ -112,17 +112,30 @@ a:visited {
             "experience"
             "activity"
             "education"
-            "contact"
-            "games";
+            "games"
+            "contact";
     }
 
     .project-card {
+        align-items: start;
         display: grid;
         column-gap: 1em;
         grid-template-rows: auto;
         grid-template-areas:
             "image"
             "info";
+    }
+
+    .project-card h2 {
+        margin-top: 0;
+    }
+
+    .project-card img {
+        margin-top: 1rem;
+    }
+
+    .project-card p {
+        margin-bottom: 1rem;
     }
 
     .profile {
@@ -161,6 +174,33 @@ a:visited {
     .games {
         grid-area: games;
     }
+
+    input,
+    textarea {
+        width: 100%;
+    }
+
+    textarea {
+        resize: vertical;
+        height: 5rem;
+    }
+
+    button {
+        padding: 0.5em;
+        color: #FFF;
+    }
+
+    .activity img {
+        max-width: 100%;
+    }
+
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
 }
 
 /* 62em is approx 992px (same breakpoint as Bootstrap for Navbar) */
@@ -174,13 +214,13 @@ a:visited {
         row-gap: 1em;
         column-gap: 1.5em;
         grid-template-columns: 30% auto;
-        grid-template-rows: repeat(9, 9);
+        grid-template-rows: repeat(7, 8);
         grid-template-areas:
             "profile about"
             "skills projects"
             "activity experience"
-            "contact education"
-            "games placeholder";
+            "games education"
+            "contact placeholder";
     }
 
     .project-card {
@@ -190,6 +230,10 @@ a:visited {
         grid-template-rows: auto auto;
         grid-template-areas:
             "image info";
+    }
+
+    .project-card img {
+        margin-top: 0;
     }
 
     .profile {
@@ -210,27 +254,27 @@ a:visited {
 
     .projects {
         grid-area: projects;
-        grid-row: 2 / span 4;
+        grid-row: 2 / span 2;
     }
 
     .activity {
         grid-area: activity;
-        grid-row: 4 / span 1;
+        grid-row: 4 / span 2;
     }
 
     .experience {
         grid-area: experience;
-        grid-row: 6 / span 2;
+        grid-row: 4 / span 2;
     }
 
     .contact {
         grid-area: contact;
-        grid-row: 5 / span 1;
+        grid-row: 7 / span 1;
     }
 
     .education {
         grid-area: education;
-        grid-row: 9 / span 1;
+        grid-row: 6 / span 1;
     }
 
     .games {
